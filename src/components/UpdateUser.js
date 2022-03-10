@@ -44,82 +44,93 @@ const NewUser = (props) => {
     });
 
   return (
-    <form onSubmit={formik.handleSubmit } >
-        <label htmlFor="firstName">first name</label>
-        <input
+    <form onSubmit={formik.handleSubmit } className="forms">
+        <div>
+        <label htmlFor="firstName">first name&nbsp;</label>
+        <input style={{"margin-right":"10px"}}
             id="firstName"
             name="firstName"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.firstName}
         />
-        <label htmlFor="lastName">last name</label>
-        <input
+        <label htmlFor="lastName" style={{"margin-left":"79px"}}>last name&nbsp;</label>
+        <input style={{"margin-right":"10px"}}
             id="lastName"
             name="lastName"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.lastName}
         />
-        <label htmlFor="city">city</label>
-        <input
+        </div>
+        <div>
+        <label htmlFor="city" style={{"margin-right":"50px"}}>city</label>
+        <input style={{"margin-right":"10px"}}
             id="city"
             name="city"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.city}
         />
-        <label htmlFor="country">country</label>
-        <input
+        <label htmlFor="country" style={{"margin-right":"18px","margin-left":"80px"}}>country</label>
+        <input style={{"margin-right":"10px"}}
             id="country"
             name="country"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.country}
         />
-        <label htmlFor="employer">employer</label>
-        <input
+        </div>
+        <div>
+        <label htmlFor="employer" style={{"margin-right":"8px"}}>employer</label>
+        <input style={{"margin-right":"10px"}}
             id="employer"
             name="employer"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.employer}
         />
-        <label htmlFor="title">title</label>
-        <input
+        <label htmlFor="title" style={{"margin-right":"45px","margin-left":"80px"}}>title</label>
+        <input style={{"margin-right":"10px"}}
             id="title"
             name="title"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.title}
         />
-        <label htmlFor="favoriteMovie1">favoriteMovie1</label>
-        <input
+        </div>
+        <div>
+        <label htmlFor="favoriteMovie1" style={{"margin-right":"23px"}}>movie1</label>
+        <input style={{"margin-right":"10px","width":"115px"}}
             id="favoriteMovie1"
             name="favoriteMovie1"
             type="favoriteMovie1"
             onChange={formik.handleChange}
             value={formik.values.favoriteMovie1}
         />
-        <label htmlFor="favoriteMovie2">favoriteMovie2</label>
-        <input
+        <label htmlFor="favoriteMovie2" style={{"margin-right":"5px"}}>movie2</label>
+        <input style={{"margin-right":"10px","width":"115px"}}
             id="favoriteMovie2"
             name="favoriteMovie2"
             type="favoriteMovie2"
             onChange={formik.handleChange}
             value={formik.values.favoriteMovie2}
         />
-        <label htmlFor="favoritemovie3">favoritemovie3</label>
-        <input
+        <label htmlFor="favoritemovie3" style={{"margin-right":"5px"}}>movie3</label>
+        <input style={{"margin-right":"10px","width":"115px"}}
             id="favoritemovie3"
             name="favoritemovie3"
             type="favoritemovie3"
             onChange={formik.handleChange}
             value={formik.values.favoritemovie3}
         />
+        </div>
+        
 
-
+        <div className="submitCont">
         <button type="submit">Submit</button>
+        </div>
+        
         
         
     </form>

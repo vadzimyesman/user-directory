@@ -9,8 +9,9 @@ import useForceUpdate from 'use-force-update';
 
 function InfoField() {
 
-
-    const [currentUserId, setCurrentUserId]=useState(5)
+    const previousText ="< Previous"
+    const nextText ="Next >"
+    const [currentUserId, setCurrentUserId]=useState(0)
     //const [deletedUsers, setDeletedUsers]=useState([])
     const [displayFormStatus, setDisplayFormStatus]=useState(false)
     const [updateFormStatus, setUpdateFormStatus]=useState(false)
@@ -44,7 +45,7 @@ function InfoField() {
     
       //console.log(data[currentUserId].favoriteMovies)
       let  favoriteMoviesList=data[currentUserId].favoriteMovies.map((element, index)=>{
-        return <li key={index}>{element}</li>
+        return <li className='infoText2' key={index}>{element}</li>
       })
 
 
@@ -60,22 +61,25 @@ function InfoField() {
       <CurrentPage pageNumber={currentUserId+1} numberOfUsers={data.length} />
       <div>
       <h4></h4>
-      <h5>{data[currentUserId].name.first} {data[currentUserId].name.last}</h5>
-      <h5>From: {data[currentUserId].city}, {data[currentUserId].country}</h5>
-      <h5>Job Title: {data[currentUserId].title}</h5>
-      <h5>Employer: {data[currentUserId].employer}</h5>
-      <h5>Favourite Movies:
-        <ol>
+      <h5 className='names'>{data[currentUserId].name.first} {data[currentUserId].name.last}</h5>
+      <div className='userInfo1'>
+        <div className='flexText'><h5 className='infoText3'>From:&nbsp;</h5><h5 className='infoText2'>{data[currentUserId].city}, {data[currentUserId].country}</h5></div>
+        <div className='flexText'><h5 className='infoText3'>Job Title:&nbsp;</h5><h5 className='infoText2'>{data[currentUserId].title}</h5></div>
+        <div className='flexText'><h5 className='infoText3'>Employer:&nbsp;</h5><h5 className='infoText2'>{data[currentUserId].employer}</h5></div>
+      </div>
+
+      <div ><h5 className='infoText3 favMovies' >Favourite Movies:</h5>
+        <ol className='movieList'>
           {favoriteMoviesList}
         </ol>
-      </h5>
+      </div>
       </div>  
       </div>
       <div className='allButtons'>
       <button
         className='routing'
         onClick={buttonPrevious}
-        >Previous</button>
+        >{previousText}</button>
       <div className='modify'>
         <button
         className='modifyButtons'
@@ -96,7 +100,7 @@ function InfoField() {
       <button
         onClick={buttonNext}
         className='routing'
-        > Next ></button>
+        >{nextText}</button>
       </div>
 
       {displayFormStatus && <NewUser display={setDisplayFormStatus}/>}
