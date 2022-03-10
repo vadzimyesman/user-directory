@@ -1,11 +1,25 @@
 import React from "react";
 import { useFormik } from "formik";
-import data from '../data'
+import * as Yup from "yup";
+import data from '../data';
 
 
 
 
 const NewUser = (props) => {
+
+
+        const validationSchema = Yup.object({
+        firstName: Yup.string().required("Required"),
+        lastName: Yup.string().required("Required"),
+        city: Yup.string().required("Required"),
+        country: Yup.string().required("Required"),
+        employer: Yup.string().required("Required"),
+        title: Yup.string().required("Required"),
+        favoriteMovie1: Yup.string().required("Required"),
+        favoriteMovie2: Yup.string().required("Required"),
+        favoritemovie3: Yup.string().required("Required")
+    })
 
     const formik = useFormik({
         initialValues: {
@@ -39,7 +53,9 @@ const NewUser = (props) => {
                       values.favoritemovie3
                     ]})
         },
+        validationSchema
     });
+
 
   return (
     <form onSubmit={formik.handleSubmit } className="forms">
