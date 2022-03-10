@@ -124,12 +124,13 @@ const NewUser = (props) => {
             onChange={formik.handleChange}
             value={formik.values.favoritemovie3}
         />
+        <button type="submit">Submit</button>
         </div>
         
 
-        <div className="submitCont">
-        <button type="submit">Submit</button>
-        </div>
+        
+        
+      
         
         
         
